@@ -1,3 +1,4 @@
+//นาย ภคพล อยู่ยืน 663380226-7
 package service;
 
 import java.util.ArrayList;
@@ -15,12 +16,12 @@ public class FavouriteMovie {
 		}
 		
 		//get only books relative to the keyword in the catalog of a certain month
-		public List<String> getMovie(String playlist, String movieName) {
+		public List<String> getMovie(String movieType, String movieName) {
 			List<String> movieplayList = new ArrayList<String>();
-			List<String> allmovieList = movieservice.getMovie(playlist, movieName);
+			List<String> allmovieList = movieservice.getMovie(movieType, movieName);
 				
 			for (String movie: allmovieList) {
-				if (movie.contains(movieName)) {
+				if (movie.contains(movieType)) {
 					movieplayList.add(movie);
 				}
 			}
